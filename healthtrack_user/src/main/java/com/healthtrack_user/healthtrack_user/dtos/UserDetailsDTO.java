@@ -1,7 +1,8 @@
 package com.healthtrack_user.healthtrack_user.dtos;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.antlr.v4.runtime.misc.NotNull;
+
 
 import java.util.UUID;
 @AllArgsConstructor
