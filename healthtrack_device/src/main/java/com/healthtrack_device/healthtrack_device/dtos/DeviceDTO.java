@@ -2,6 +2,8 @@ package com.healthtrack_device.healthtrack_device.dtos;
 
 import com.healthtrack_device.healthtrack_device.entity.UserMapping;
 import lombok.*;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.util.UUID;
 
@@ -11,10 +13,12 @@ import java.util.UUID;
 @Setter
 @Builder
 
-public class DeviceDTO {
+public class DeviceDTO extends RepresentationModel<DeviceDTO> {
     private UUID deviceId;
     private String description;
     private String address;
     private double maximumHourlyEnergyConsumption;
     private UserMapping user;
+
+
 }
