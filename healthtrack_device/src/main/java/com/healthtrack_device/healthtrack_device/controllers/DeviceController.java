@@ -6,6 +6,7 @@ import com.healthtrack_device.healthtrack_device.dtos.DeviceDTO;
 import com.healthtrack_device.healthtrack_device.dtos.DeviceDetailsDTO;
 import com.healthtrack_device.healthtrack_device.dtos.DeviceInfoDTO;
 import com.healthtrack_device.healthtrack_device.service.DeviceService;
+import com.healthtrack_device.healthtrack_device.service.RabbitSender;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
@@ -27,11 +28,13 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 public class DeviceController {
     private final DeviceService deviceService;
     private final JwtTokenUtil jwtTokenUtil;
+    private final RabbitSender rabbitSender;
 @Autowired
-    public DeviceController(DeviceService deviceService, JwtTokenUtil jwtTokenUtil) {
+    public DeviceController(DeviceService deviceService, JwtTokenUtil jwtTokenUtil, RabbitSender rabbitSender) {
         this.deviceService = deviceService;
         this.jwtTokenUtil = jwtTokenUtil;
-    }
+        this.rabbitSender = rabbitSender;
+}
 
     @GetMapping()
     public ResponseEntity<List<DeviceDTO>> getAllDevices(@RequestHeader HttpHeaders headers) {
@@ -89,8 +92,8 @@ public class DeviceController {
 
         UUID deviceId = deviceService.saveDevice(deviceDetailsDTO);
 
-        //DeviceInfoDTO deviceInfoDTO = new DeviceInfoDTO(deviceId, deviceDetailsDTO.getMaximumHourlyEnergyConsumption());
-        //rabbitSender.sendCreateUpdateDevice(deviceInfoDTO);
+        DeviceInfoDTO deviceInfoDTO = new DeviceInfoDTO(deviceId, deviceDetailsDTO.getMaximumHourlyEnergyConsumption());
+        rabbitSender.sendCreateUpdateDevice(deviceInfoDTO);
 
         return new ResponseEntity<>(deviceId, HttpStatus.CREATED);
     }
@@ -104,8 +107,8 @@ public class DeviceController {
         try {
             DeviceDetailsDTO updatedDeviceDetailsDTO = deviceService.updateDeviceById(deviceDetailsDTO, deviceId);
 
-            //DeviceInfoDTO deviceInfoDTO = new DeviceInfoDTO(updatedDeviceDetailsDTO.getDeviceId(), updatedDeviceDetailsDTO.getMaximumHourlyEnergyConsumption());
-            //rabbitSender.sendCreateUpdateDevice(deviceInfoDTO);
+            DeviceInfoDTO deviceInfoDTO = new DeviceInfoDTO(updatedDeviceDetailsDTO.getDeviceId(), updatedDeviceDetailsDTO.getMaximumHourlyEnergyConsumption());
+            rabbitSender.sendCreateUpdateDevice(deviceInfoDTO);
 
             return new ResponseEntity<>(updatedDeviceDetailsDTO, HttpStatus.OK);
         } catch (ResourceNotFoundException e) {
@@ -121,7 +124,7 @@ public class DeviceController {
 
         try {
             String deleteResponse = deviceService.deleteDeviceById(deviceId);
-            //rabbitSender.sendDeleteDevice(deviceId);
+            rabbitSender.sendDeleteDevice(deviceId);
 
             return new ResponseEntity<>(deleteResponse, HttpStatus.OK);
         } catch (ResourceNotFoundException e) {
