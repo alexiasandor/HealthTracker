@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-233.14475.28">
+    <data-source name="healthtrack_messaging@localhost" uuid="c92e5972-8f46-4afe-be51-550a4fe42b30">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
