@@ -1,0 +1,155 @@
+.ModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+  
+.ModalContent {
+    background-color: rgb(72, 101, 182);
+    width: 620px;
+    height: 620px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+  
+.ModalHeader {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+  
+.ModalCloseButton {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 70px;
+    height: 30px;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+.ModalSearchButton {
+    width: 70px;
+    height: 30px;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+.ModalSearchField {
+    width: 270px;
+    height: 30px;
+    border-radius: 32px;
+}
+
+.ModalUserListContainer {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.ModalUserItem {
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.ModalUserItem:hover {
+    background-color: #e0e0e0;
+}
+
+.ModalBackToUserListButton {
+    width: 70px;
+    height: 30px;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+.ModalMessageHistoryContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+}
+
+.ModalMessageHistory {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    background-color: #c1d1e4;
+    padding: 10px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    height: 400px;
+    max-height: 400px;
+}
+
+.ModalMessageInputContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    bottom: 0px;
+}
+
+.ModalMessageInputField {
+    flex: 1;
+    width: 270px;
+    height: 30px;
+    border-radius: 32px;
+}
+
+.ModalSendMessageButton {
+    width: 90px;
+    height: 30px;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+.ModalMessageItem {
+    max-width: 50%;
+    word-wrap: break-word;
+    border-radius: 10px;
+    background-color: #e0f7fa;
+    padding: 5px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 2px solid cyan;
+}
+
+.ModalMessageLeft {
+    align-self: flex-start;
+}
+
+.ModalMessageRight {
+    align-self: flex-end;
+    background-color: #a7ffeb;
+}
+
+.ModalMessageStatus img {
+    width: 20px;
+    height: 20px;
+}
+
+.ModalMessageText {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.ModalUserWrittingMessage {
+    margin-top: 0px;
+    height: 40px;
+    min-height: 40px;
+}

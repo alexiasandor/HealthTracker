@@ -1,0 +1,158 @@
+html {
+    background: #f1dfb6;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+}
+
+.AdminPageCenter {
+    display: flex;
+    flex: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.AdminPageTextField {
+    width: 200px;
+    height: 30px;
+    border-radius: 32px;
+    margin-bottom: 15px;
+}
+
+.AdminPageBackButton {
+    font-family: 'DejaVu Serif', Georgia, "Times New Roman", Times, serif;
+    font-size: larger;
+    width: 125px;
+    height: 50px;
+    border-radius: 32px;
+    background-image: url("../assets/images/AdminPage/AdminPageBackButton.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    padding-left: 35px;
+    margin: 0px;
+}
+
+.AdminPageOptionButton {
+    font-family: 'DejaVu Serif', Georgia, "Times New Roman", Times, serif;
+    font-size: larger;
+    width: 200px;
+    height: 50px;
+    border-radius: 32px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.AdminPageCenterRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 90vw;
+}
+
+.AdminPageSecondOptionsWrapper {
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 90vw;
+}
+
+.AdminPageSecondOptionsWindow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.AdminPageFieldsWrapper {
+    margin-top: 50px;
+    justify-content: center;
+    height: 50vh;
+    width: 100vw;
+}
+
+.AdminPageFieldsWindow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.AdminPageTable {
+    margin-top: 50px;
+    justify-content: center;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.AdminPageTableFormat {
+    border-spacing: 0;
+    margin: 25px 0;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.AdminPageTableHead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.AdminPageTableData {
+    border: 2px solid rgb(163, 19, 51);
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.AdminChatButton {
+    font-family: 'DejaVu Serif', Georgia, "Times New Roman", Times, serif;
+    font-size: larger;
+    width: 125px;
+    height: 50px;
+    border-radius: 32px;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.AdminDivTopButtons {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+.AdminNotificationBubble {
+    position: absolute;
+    top: 0px;
+    right: 105px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AdminNotificationBubble::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}

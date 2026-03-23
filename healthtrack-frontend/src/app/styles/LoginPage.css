@@ -1,0 +1,52 @@
+html {
+    background: #96e3eb;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+}
+
+.LoginPageCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+    flex-direction: column;
+}
+
+.LoginPageTextField {
+    width: 200px;
+    height: 30px;
+    border-radius: 32px;
+    margin-bottom: 15px;
+}
+
+.LoginPageLoginButton {
+    font-family: 'DejaVu Serif', Georgia, "Times New Roman", Times, serif;
+    font-size: x-large;
+    width: 200px;
+    height: 100px;
+    border-radius: 32px;
+    background-image: url("../assets/images/LoginPage/LoginPageLoginButton.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.LoginPageBackButton {
+    font-family: 'DejaVu Serif', Georgia, "Times New Roman", Times, serif;
+    font-size: larger;
+    width: 100px;
+    height: 50px;
+    border-radius: 32px;
+    background-image: url("../assets/images/LoginPage/LoginPageBackButton.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    padding-left: 35px;
+    margin: 0px;
+}
